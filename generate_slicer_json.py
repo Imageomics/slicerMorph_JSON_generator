@@ -4,10 +4,6 @@ import pandas as pd
 import numpy as np
 import sys
 
-
-
-df = pd.read_csv(sys.argv[1])
-
 def get_region_list(df):
     '''
     This function generates a list of the region dictionaries. 
@@ -144,4 +140,24 @@ def make_json(df):
     with open("segmentation_category_type.json", "w", encoding = 'utf-8') as fp:
         json.dump(file, fp, default = int_converter, indent = 4)
 
-make_json(df)
+def main():
+    #check input includes file
+    if len(sys.argv) == 1:
+        sys.exit("Please provide a source CSV file.")
+    else:
+        #check we can parse csv (& is it csv) --likely need open call for this & move df down
+        try:
+            df = pd.read_csv(sys.argv[1])
+        except UnicodeDecodeError:
+            sys.exit("The source file is not a valid CSV format, see the documentation: https://github.com/Imageomics/slicerMorph_JSON_generator#readme.")
+           
+        #check for required columns
+        features = ['Region', 'UberonID', 'UberonLabel', 'SlicerLabel', 'Paired', 'R', 'G', 'B']
+        for feature in features:
+            if feature not in list(df.columns):
+                sys.exit("Source CSV does not have " + feature + " column. " +
+                            "See the documentation for list of required columns: https://github.com/Imageomics/slicerMorph_JSON_generator#readme.")
+        make_json(df)
+
+if __name__ == "__main__":
+    main()

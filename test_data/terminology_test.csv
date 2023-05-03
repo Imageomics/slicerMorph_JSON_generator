@@ -1,0 +1,86 @@
+Region,UberonID,UberonLabel,SlicerLabel,Paired,R,G,B
+Head,100000,Cranium,Cranium,,145,235,120
+Head,100001,Mandible,Mandible,Y,255,249,87
+Head,100002,Nasal,Nasal,Y,236,148,208
+Head,100003,Maxilla,Maxilla,Y,250,170,50
+Head,100004,Premaxilla,Premaxilla,,87,197,211
+Head,100005,Zygomatics,Zygomatics,Y,240,77,115
+Head,100006,Frontal,Frontal,Y,65,36,128
+Head,100007,Parietal,Parietal,Y,120,82,204
+Head,100008,Interparietal,Interparietal,,101,56,199
+Head,100009,Occipital,Occipital,,218,201,255
+Head,100010,Sphenoid,Sphenoid,,41,95,204
+Head,100011,Petrosal,Petrosal,Y,103,87,138
+Head,100012,Temporal,Temporal,Y,213,155,255
+Head,100013,Ethmoid,Ethmoid,,204,41,150
+Head,100014,Presphenoid,Presphenoid,,61,219,190
+Head,100015,Tympanic Ring,Tympanic Ring,Y,16,57,204
+Head,100016,Tympanic Bulla,Tympanic Bulla,Y,116,217,69
+Head,100017,Hyoid,Hyoid,,167,171,121
+Head,100018,Lacrymal,Lacrymal,Y,255,207,218
+Head,100019,Vomer,Vomer,Y,219,46,46
+Head,100020,Alisphenoid,Alisphenoid,Y,58,149,252
+Head,100021,Orbitosphenoid,Orbitosphenoid,Y,237,217,114
+Dentition,100022,Maxillary Molar 1,Maxillary Molar 1,Y,0,179,92
+Dentition,100023,Maxillary Molar 2,Maxillary Molar 2,Y,144,16,49
+Dentition,100024,Maxillary Molar 3,Maxillary Molar 3,Y,255,237,76
+Dentition,100025,Maxillary Molar 4,Maxillary Molar 4,Y,50,25,91
+Dentition,100026,Mandibular Molar M1,Mandibular Molar M1,Y,78,91,207
+Dentition,100027,Mandibular Molar M2,Mandibular Molar M2,Y,217,131,33
+Dentition,100028,Mandibular Molar M3,Mandibular Molar M3,Y,255,102,184
+Dentition,100029,Mandibular Molar M4,Mandibular Molar M4,Y,125,232,225
+Dentition,100030,Maxillary Canine,Maxillary Canine,Y,255,164,79
+Dentition,100031,Mandibular Canine,Mandibular Canine,Y,49,87,255
+Dentition,100032,Maxillary Premolar 1,Maxillary Premolar 1,Y,208,241,141
+Dentition,100033,Maxillary Premolar 2,Maxillary Premolar 2,Y,132,177,200
+Dentition,100034,Maxillary Premolar 3,Maxillary Premolar 3,Y,205,77,121
+Dentition,100035,Mandibular Premolar 1,Mandibular Premolar 1,Y,233,233,99
+Dentition,100036,Mandibular Premolar 2,Mandibular Premolar 2,Y,255,170,201
+Dentition,100037,Mandibular Premolar 3,Mandibular Premolar 3,Y,103,190,145
+Dentition,100038,Maxillary Incisor 1,Maxillary Incisor 1,Y,118,161,0
+Dentition,100039,Maxillary Incisor 2,Maxillary Incisor 2,Y,255,218,191
+Dentition,100040,Maxillary Incisor 3,Maxillary Incisor 3,Y,70,192,255
+Dentition,100041,Maxillary Incisor 4,Maxillary Incisor 4,Y,255,96,173
+Dentition,100042,Maxillary Incisor 5,Maxillary Incisor 5,Y,200,13,155
+Dentition,100043,Mandibular Incisor 1,Mandibular Incisor 1,Y,159,94,189
+Dentition,100044,Mandibular Incisor 2,Mandibular Incisor 2,Y,35,178,224
+Dentition,100045,Mandibular Incisor 3,Mandibular Incisor 3,Y,114,218,230
+Dentition,100046,Mandibular Incisor 4,Mandibular Incisor 4,Y,183,251,251
+Dentition,100047,Mandibular Incisor 5,Mandibular Incisor 5,Y,56,165,152
+Forelimb,100048,Forelimb,Forelimb,Y,20,103,94
+Forelimb,100049,Pectoral Girdle,Pectoral Girdle,Y,26,52,27
+Forelimb,100050,Lower Arm,Lower Arm,Y,55,139,77
+Forelimb,100051,Scapula,Scapula,Y,129,212,139
+Forelimb,100052,Clavicle,Clavicle,Y,190,250,215
+Forelimb,100053,Humerus,Humerus,Y,255,255,255
+Forelimb,100054,Radius,Radius,Y,224,189,144
+Forelimb,100055,Ulna,Ulna,Y,211,218,115
+Hindlimb,100056,Hindlimb,Hindlimb,Y,230,119,80
+Hindlimb,100057,Pelvic gridle,Pelvic gridle,,213,98,229
+Hindlimb,100058,Coxa,Coxa,Y,127,82,255
+Hindlimb,100059,Ilium,Ilium,Y,145,235,120
+Hindlimb,100060,Ischium,Ischium,Y,255,249,87
+Hindlimb,100061,Pubis,Pubis,Y,236,148,208
+Hindlimb,100062,Epipubis,Epipubis,Y,250,170,50
+Hindlimb,100063,Lower Leg,Lower Leg,Y,87,197,211
+Hindlimb,100064,Femur,Femur,Y,240,77,115
+Hindlimb,100065,Tibia,Tibia,Y,65,36,128
+Hindlimb,100066,Fibula,Fibula,Y,120,82,204
+Hindlimb,100067,Patella,Patella,Y,101,56,199
+Spine,100068,Cocyx,Cocyx,Y,218,201,255
+Spine,100069,Sacrum,Sacrum,Y,41,95,204
+Spine,100070,Atlas,Atlas,,103,87,138
+Spine,100071,Axis,Axis,,213,155,255
+Spine,100072,Cervical 3,Cervical 3,,204,41,150
+Spine,100073,Cervical 4,Cervical 4,,61,219,190
+Spine,100074,Thoracic 1,Thoracic 1,,16,57,204
+Spine,100075,Thoracic 2,Thoracic 2,,116,217,69
+Spine,100076,Thoracic 3,Thoracic 3,,167,171,121
+Spine,100077,Lumbar 1,Lumbar 1,,255,207,218
+Spine,100078,Lumbar 2,Lumbar 2,,219,46,46
+Spine,100079,Lumbar 3,Lumbar 3,,58,149,252
+Chest,100080,Sternum,Sternum,,237,217,114
+Chest,100081,Rib 1,Rib 1,Y,0,179,92
+Chest,100082,Rib 2,Rib 2,Y,144,16,49
+Chest,100083,Rib 3,Rib 3,Y,255,237,76
+Chest,100084,Rib 4,Rib 4,Y,50,25,91
