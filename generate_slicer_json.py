@@ -126,7 +126,7 @@ def int_converter(obj):
 def make_json(df, filename = "segmentation_category_type.json"):
     '''
     This function composes the file and saves it to JSON format in current working directory.
-    Optional parameter of filename, provides default name 'segmentation_category_type'.
+    Optional parameter of filename, provides default name 'segmentation_category_type.json'.
     '''
     #compose file
     file = {
