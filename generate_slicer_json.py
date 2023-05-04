@@ -123,7 +123,7 @@ def int_converter(obj):
         return int(obj)
 
 
-def make_json(df):
+def make_json(df, filename = "segmentation_category_type"):
     '''
     This function composes the file and saves it to JSON format in current working directory.
     '''
@@ -137,7 +137,7 @@ def make_json(df):
         }
     }
     #save file as JSON in current directory
-    with open("segmentation_category_type.json", "w", encoding = 'utf-8') as fp:
+    with open(filename + ".json", "w", encoding = 'utf-8') as fp:
         json.dump(file, fp, default = int_converter, indent = 4)
 
 def main():
@@ -157,7 +157,11 @@ def main():
             if feature not in list(df.columns):
                 sys.exit("Source CSV does not have " + feature + " column. " +
                             "See the documentation for list of required columns: https://github.com/Imageomics/slicerMorph_JSON_generator#readme.")
-        make_json(df)
+        if len(sys.argv) == 3:
+            filename = sys.argv[2]
+            make_json(df, filename)
+        else:
+            make_json(df)
 
 if __name__ == "__main__":
     main()
