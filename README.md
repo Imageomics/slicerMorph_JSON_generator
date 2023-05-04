@@ -23,5 +23,11 @@ This repo provides a simple tool to generate a JSON file for use with [SlicerMor
    python generate_slicer_json.py <source.csv>
    ```
    This will save `segmentation_category_type.json` in your current working directory.
+
+   To choose a different name for your JSON file, run 
+   ```
+   python generate_slicer_json.py <source.csv> <filename>
+   ```
+   This will save `filename.json` in your current working directory.
   
   For more information on Terminologies, see the Slicer docs section on [terminologies](https://slicer.readthedocs.io/en/latest/user_guide/modules/terminologies.html), where they also provide a link to this JSON [validator](https://qiicr.org/dcmqi/#/validators) which was used to validate the output from the tool provided in this repo.
