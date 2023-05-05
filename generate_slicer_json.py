@@ -151,7 +151,7 @@ def main():
             df = pd.read_csv(sys.argv[1])
         except UnicodeDecodeError:
             sys.exit("The source file is not a valid CSV format, see the documentation: https://github.com/Imageomics/slicerMorph_JSON_generator#readme.")
-        except FileNotFoundError as err:
+        except (FileNotFoundError, PermissionError) as err:
             sys.exit(err)
 
         #check for required columns
