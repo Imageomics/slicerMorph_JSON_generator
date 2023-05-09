@@ -29,17 +29,14 @@ jobs:
 
       - name: set JSON
         id: step_json
-        run: |
-          EOF=$(dd if=/dev/urandom bs=15 count=1 status=none | base64)
-          echo "JSON_OUTPUT<<$EOF" >> $GITHUB_OUTPUT
-          python generate_slicer_json.py test_data/terminology_test.csv >> $GITHUB_OUTPUT
-          echo "$EOF" >> $GITHUB_OUTPUT
-
+        run: 
+          python generate_slicer_json.py test_data/terminology_test.csv test.json
+          
       - uses: actions/checkout@v3
-      - name: Validate JSON
+      - name: Validate JSON Schemas
         uses: walbo/validate-json@v1.1.0
         with:
-          files: ${{ steps.step_json.outputs.JSON_OUTPUT }} #folder/**/*.json
+          files: test.json
 
           # optional, defaults to `$schema` in your JSON file
           schema: schemas/schema.json
