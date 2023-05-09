@@ -1,0 +1,56 @@
+name: Validate JSON
+# adapted from https://github.com/walbo/validate-json.git
+
+on:
+  pull_request:
+  push:
+    branches: 
+      - main
+   
+      
+jobs:
+  validate:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v3
+
+      - name: Setup Python
+        uses: actions/setup-python@v4
+        with:
+          python-version: '3.8'
+
+      - name: Install requirements
+        run: pip install -r requirements.txt
+        shell: bash
+
+      - name: Get JSON
+        id: step_json
+        run: 
+          python generate_slicer_json.py test_data/terminology_test.csv test.json
+          
+      - name: Validate JSON Schemas
+        uses: walbo/validate-json@v1.1.0
+        with:
+          files: folder/**/*/test.json 
+
+          # optional, defaults to `$schema` in your JSON file
+          schema: schemas/schema.json
+
+          # optional, default: draft-04
+          schema-version: draft-04
+
+          # optional, default: false
+          print-valid-files: false
+
+          # optional, default: false
+          fail-on-missing-schema: true
+
+          # optional, default: true
+          strict: true
+
+          # optional, default: false
+          allow-matching-properties: false
+
+          # optional, default: true
+          allow-union-types: true
