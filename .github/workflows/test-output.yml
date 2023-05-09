@@ -15,24 +15,24 @@ jobs:
       - name: Checkout repository
         uses: actions/checkout@v3
 
-      - uses: actions/setup-python@v4
+      - name: Setup Python
+        uses: actions/setup-python@v4
         with:
           python-version: '3.8'
 
-      - name: install requirements
+      - name: Install requirements
         run: pip install -r requirements.txt
         shell: bash
 
-      - name: set JSON
+      - name: Get JSON
         id: step_json
         run: 
           python generate_slicer_json.py test_data/terminology_test.csv test.json
           
-      - uses: actions/checkout@v3
       - name: Validate JSON Schemas
         uses: walbo/validate-json@v1.1.0
         with:
-          files: test.json
+          files: folder/**/*/test.json 
 
           # optional, defaults to `$schema` in your JSON file
           schema: schemas/schema.json
