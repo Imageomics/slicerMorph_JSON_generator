@@ -3,21 +3,17 @@ name: Validate JSON
 
 on:
   pull_request:
-    paths:
-      - '**.py'
   push:
-    #branches: 
-   #   - main
-   #   - 'feature/**'
-   # paths:
-   #   - '**.py'
+    branches: 
+      - main
+   
       
 jobs:
   validate:
     runs-on: ubuntu-latest
     steps:
       - name: Checkout repository
-        uses: actions/checkout@v2
+        uses: actions/checkout@v3
 
       - uses: actions/setup-python@v4
         with:
@@ -48,7 +44,7 @@ jobs:
           print-valid-files: false
 
           # optional, default: false
-          fail-on-missing-schema: false
+          fail-on-missing-schema: true
 
           # optional, default: true
           strict: true
