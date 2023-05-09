@@ -103,7 +103,7 @@ def get_region_list(df):
                     "CodingSchemeDesignator": "UBERON", 
                     "showAnatomy": True,
                     "cid": "7150",
-                    "CodeValue": str(list(df.loc[df.Region == region].UberonID)[0]),  #pull first UberonID?
+                    "CodeValue": str(list(df.loc[df.Region == region].UberonID)[0]),  #pull first UberonID
                     "contextGroupName": "SegmentationPropertyCategories",
                     "Type": 
                             region_labels
@@ -123,9 +123,10 @@ def int_converter(obj):
         return int(obj)
 
 
-def make_json(df):
+def make_json(df, filename = "segmentation_category_type.json"):
     '''
     This function composes the file and saves it to JSON format in current working directory.
+    Optional parameter of filename, provides default name 'segmentation_category_type.json'.
     '''
     #compose file
     file = {
@@ -136,8 +137,8 @@ def make_json(df):
             get_region_list(df)
         }
     }
-    #save file as JSON in current directory
-    with open("segmentation_category_type.json", "w", encoding = 'utf-8') as fp:
+    #save file as JSON in current directory 
+    with open(filename, "w", encoding = 'utf-8') as fp:
         json.dump(file, fp, default = int_converter, indent = 4)
 
 def main():
@@ -145,19 +146,27 @@ def main():
     if len(sys.argv) == 1:
         sys.exit("Please provide a source CSV file.")
     else:
-        #check we can parse csv (& is it csv) --likely need open call for this & move df down
+        #check we can parse csv (& is it csv)
         try:
             df = pd.read_csv(sys.argv[1])
         except UnicodeDecodeError:
             sys.exit("The source file is not a valid CSV format, see the documentation: https://github.com/Imageomics/slicerMorph_JSON_generator#readme.")
-           
+        except (FileNotFoundError, PermissionError) as err:
+            sys.exit(err)
+
         #check for required columns
         features = ['Region', 'UberonID', 'UberonLabel', 'SlicerLabel', 'Paired', 'R', 'G', 'B']
         for feature in features:
             if feature not in list(df.columns):
                 sys.exit("Source CSV does not have " + feature + " column. " +
                             "See the documentation for list of required columns: https://github.com/Imageomics/slicerMorph_JSON_generator#readme.")
-        make_json(df)
+        
+        #check for filename given by user
+        if len(sys.argv) == 3:
+            filename = sys.argv[2]
+            make_json(df, filename)
+        else:
+            make_json(df)
 
 if __name__ == "__main__":
     main()
