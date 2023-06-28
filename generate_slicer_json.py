@@ -31,6 +31,9 @@ def get_region_list(df):
                 #check for paired values & add appropriate Modifiers
                 if df.loc[i].Paired == "Y":
                     temp_label_dict = {
+                        "recommendedDisplayRGBValue": [df.loc[i].R, 
+                                                        df.loc[i].G, 
+                                                        df.loc[i].B],
                         "CodeMeaning": df.loc[i].UberonLabel,
                         "CodingSchemeDesignator": "UBERON",
                         "3dSlicerLabel": df.loc[i].SlicerLabel,
@@ -66,16 +69,6 @@ def get_region_list(df):
                                 "CodeValue": "7771000",
                                 "contextGroupName": "Laterality",
                                 "SNOMEDCTConceptID": "7771000"
-                            },
-                            {
-                                "recommendedDisplayRGBValue": [df.loc[i].R, 
-                                                                df.loc[i].G, 
-                                                                df.loc[i].B],
-                                "CodeMeaning": "Right and left",
-                                "CodingSchemeDesignator": "SCT",
-                                "cid": "244",
-                                "CodeValue": "0000210",
-                                "contextGroupName": "Laterality"
                             }
                             ]
                     }
