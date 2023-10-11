@@ -123,7 +123,7 @@ def make_json(df, filename = "segmentation_category_type.json"):
     '''
     #compose file
     file = {
-        "SegmentationCategoryTypeContextName": "Segmentation category and type",
+        "SegmentationCategoryTypeContextName": "SlicerMorph Segmentation category and type",
         "@schema": "https://raw.githubusercontent.com/qiicr/dcmqi/master/doc/schemas/segment-context-schema.json#",
         "SegmentationCodes": {
         "Category":
